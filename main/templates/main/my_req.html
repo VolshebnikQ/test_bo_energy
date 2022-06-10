@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Мои запросы {% endblock title %}
+
+{% block content %}
+
+
+<div class="card text-white bg-info mb-3 hello-card" style="max-width: 60rem; text-align: center;">
+    <div class="card-header">Вот все ваши запросы</div>
+    <div class="card-body">
+        <div class="mb-3">
+
+        </div>
+        <table>
+            <tbody>
+                {% for r in requests %}
+                    {% if r.user == user.username %}
+                        <tr class="table-dark">
+                            <th>Дата</th>
+                            <td>
+                                <p class="card-text">{{ r.date }}</p>
+                            </td>
+                        <tr>
+                        <tr class="table-success">
+                            <th>Запрос</th>
+                            <td>
+                                <p class="card-text">{{ r.request }}</p>
+                            </td>
+                        <tr>
+                        <tr class="table-success">
+                            <th>Ответ</th>
+                            <td>
+                                <p class="card-text">{{ r.response }}</p>
+                            </td>
+                        <tr>
+                        <tr></tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Домашняя страница {% endblock title %}
+
+{% block content %}
+
+
+<div class="card text-white bg-info mb-3 hello-card" style="max-width: 40rem; text-align: center;">
+    <div class="card-header">Здравствуйте</div>
+    <div class="card-body">
+        <h4 class="card-title">Добро пожаловать на сайт тестовых заданий</h4>
+        <p class="card-text">Задание выполнил <b>Юматов Андрей</b></p>
+        <p class="card-text">
+            Его резюме находится по этой 
+            <a href="https://disk.yandex.ru/i/RGhaWOrlwfWvHA">
+                <span class="badge rounded-pill bg-light">ссылке</span>
+            </a>
+        </p>
+        <p class="card-text">
+            А само задание представлено 
+            <a href="https://boenergo.notion.site/Python-670ea043ddb44d69870546f7adb1f441">
+                <span class="badge rounded-pill bg-light">здесь</span>
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

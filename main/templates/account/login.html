@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Страница входа {% endblock title %}
+
+{% block content %}
+<div class="content">
+    <div class="card text-white bg-primary mb-3 hello-card" style="max-width: 20rem;">
+        <div class="card-body">
+            <h4 class="card-title">Авторизация</h4>
+            <form method="post">
+                <table>
+                    <tbody>
+                        {% csrf_token %}
+                        {% for f in form %}
+                        <tr>
+                            <div class="mb-3">
+                                <th>
+                                    <label for="{{f.id_for_label}}" class="form-label">{{f.label}}</label>
+                                </th>
+                                <td>
+                                    {{ f }}
+                                    <div class="form-error"><p>{{ f.errors }}</p></div>
+                                </td>
+                            </div>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-warning">Войти</button>
+            </form> 
+        </div>
+    </div>    
+</div>                    
+{% endblock content%}

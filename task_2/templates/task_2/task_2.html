@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Решение уравнений {% endblock title %}
+
+{% block content %}
+
+<div class="body">
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <div class="card text-white bg-secondary mb-3 hit-card" style="max-width: 15rem;">
+                        <div class="card-header">Подсказка</div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Выбирите любое целое число от 1 до 100
+                            </h5>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div class="card border-danger mb-3 task-card" style="max-width: 30rem;">
+                        <div class="card-header">Для предсказания цвета напишите его ниже</div>
+                        <div class="card-body task-card-body">
+                            <div id = "token" style="display: none;">
+                                {% csrf_token %}
+                            </div>
+                            <div class="col-sm-20">
+                                <input type="text" class="form-control-plaintext" id="suggest" value="6">
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-dark" id="suggest_color">Предсказать цвет предмета</button>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>
+                    <div class="card border-success mb-3 answer-card" style="max-width: 30rem;">
+                        <div class="card-header">Предсказание</div>
+                        <div class="card-body task-card-body">
+                            <h4 class="card-title" id="answer">
+
+                            </h4>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="4"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+{% endblock %}

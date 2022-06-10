@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Решение уравнений {% endblock title %}
+
+{% block content %}
+
+<div class="body">
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <div class="card text-white bg-secondary mb-3 hit-card" style="max-width: 15rem;">
+                        <div class="card-header">Подсказка</div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Примеры:<br><br>
+                                5x^2 + 44x - 2<br>
+                                4*x - x^2 - 17 = 0<br>
+                                x^2 - 17 = 5x<br>
+                            </h5>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div class="card border-danger mb-3 task-card" style="max-width: 30rem;">
+                        <div class="card-header">Для решения квадратного уравнения, просто впишите его в поле ниже</div>
+                        <div class="card-body task-card-body">
+                            <div id = "token" style="display: none;">
+                                {% csrf_token %}
+                            </div>
+                            <div class="col-sm-20">
+                                <input type="text" class="form-control-plaintext" id="equation" value="-5x^2 + 6.4x - 62 = 44*x^2 - 2x*6 + 6 - 77*4">
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-dark" id="solve_equation">Решить уравнение</button>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>
+                    <div class="card border-success mb-3 answer-card" style="max-width: 30rem;">
+                        <div class="card-header">Ответ</div>
+                        <div class="card-body task-card-body">
+                            <h4 class="card-title" id="answer">
+
+                            </h4>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="4"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+.hello-card {
+    margin: 10% auto;
+}
+.hit-card,
+.task-card {
+    margin: 5% auto;
+}
+.task-card-body {
+    text-align: center;
+}
+.answer-card {
+    margin: auto;
+    display: none;
+}
+.solution-card {
+    margin: auto;
+}
+
+.body {
+    display: flex;
+}
+
+table {
+    width: 100%;
+}
+th {
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+}
+thead th {
+    display: revert;
+}
+td {
+    text-align: center;
+}
+tr {
+    min-width: 1%;
+}
+.body td {
+    text-align: left;
+    width: 10%;
+}
