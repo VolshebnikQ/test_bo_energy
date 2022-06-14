@@ -42,7 +42,7 @@ def solve_equation(equation):
     if len(equation_list) == 2:
         a, b, c = get_arguments(equation_list[0])
         if equation_list[1] != "0":
-            a, b, c = list(map(lambda x, y: x+y, [a, b, c], get_arguments(equation_list[1])))
+            a, b, c = list(map(lambda x, y: x-y, [a, b, c], get_arguments(equation_list[1])))
     elif len(equation.split("=")) == 1:
         a, b, c = get_arguments(equation.replace(" ", ""))
     else:
